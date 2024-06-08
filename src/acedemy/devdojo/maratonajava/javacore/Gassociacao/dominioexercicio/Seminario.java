@@ -3,16 +3,17 @@ package acedemy.devdojo.maratonajava.javacore.Gassociacao.dominioexercicio;
 public class Seminario {
     private String titulo;
     private Aluno[] alunos;
-    private Professor professor;
+    private Local local;
 
-    public Seminario(String titulo){
+    public Seminario(String titulo, Local local){
         this.titulo = titulo;
+        this.local = local;
     }
 
-    public Seminario(String titulo, Aluno[] alunos, Professor professor){
+    public Seminario(String titulo, Local local, Aluno[] alunos){
         this.titulo = titulo;
+        this.local = local;
         this.alunos = alunos;
-        this.professor = professor;
     }
 
     public void imprime() {
@@ -21,12 +22,19 @@ public class Seminario {
         for (Aluno aluno : alunos){
             System.out.println("Alunos inscritos: " + aluno.getNome());
         }
-        if (professor == null) return;
-        System.out.println("Ministrante: " + professor.getNome());
+        System.out.println("Endereço: " + local.getEndereco());
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public Local getLocal() {
+        return local;
+    }
+
+    public void setLocal(Local local) {
+        this.local = local;
     }
 
     public void setTitulo(String titulo) {
@@ -41,11 +49,4 @@ public class Seminario {
         this.alunos = alunos;
     }
 
-    public Professor getProfessor() {
-        return professor;
-    }
-
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
-    }
 }

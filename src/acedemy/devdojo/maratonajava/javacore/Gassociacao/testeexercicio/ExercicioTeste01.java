@@ -1,6 +1,7 @@
 package acedemy.devdojo.maratonajava.javacore.Gassociacao.testeexercicio;
 
 import acedemy.devdojo.maratonajava.javacore.Gassociacao.dominioexercicio.Aluno;
+import acedemy.devdojo.maratonajava.javacore.Gassociacao.dominioexercicio.Local;
 import acedemy.devdojo.maratonajava.javacore.Gassociacao.dominioexercicio.Professor;
 import acedemy.devdojo.maratonajava.javacore.Gassociacao.dominioexercicio.Seminario;
 
@@ -9,8 +10,11 @@ public class ExercicioTeste01 {
         Aluno aluno1 = new Aluno("Pandora", 19);
         Aluno aluno2 = new Aluno("Artemis", 21);
         Aluno aluno3 = new Aluno("Pallas", 18);
-        Seminario seminario1 = new Seminario("Gatos e a dominação mundial");
-        Seminario seminario2 = new Seminario("Tecnologias para fabricação de ração de qualidade");
+        Local local1 = new Local("UFC");
+        Local local2 = new Local("UECE");
+
+        Seminario seminario1 = new Seminario("Gatos e a dominação mundial", local1);
+        Seminario seminario2 = new Seminario("Tecnologias para fabricação de ração de qualidade", local2);
         Seminario[] seminarios = {seminario1, seminario2};
         Professor professor1 = new Professor("Pitty", "Política", seminarios);
 
@@ -21,12 +25,10 @@ public class ExercicioTeste01 {
         Aluno[] alunos2 = {aluno3};
 
         seminario1.setAlunos(alunos1);
-        seminario1.setProfessor(professor1);
         seminario2.setAlunos(alunos2);
-        seminario2.setProfessor(professor1);
 
-//        seminario1.imprime();
-//        seminario2.imprime();
+        seminario1.imprime();
+        seminario2.imprime();
         professor1.imprime();
     }
 }
